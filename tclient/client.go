@@ -160,7 +160,7 @@ func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 
 	t1 := time.Now()
 	log.Print("Done generating args")
-	log.Printf("Generated in %v", t1.Sub(t0))
+	log.Printf("Generated in %0.06f sec", t1.Sub(t0).Seconds())
 
 
 	for i := 0; i < nReqs; i++ {
@@ -177,7 +177,7 @@ func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 		}
 	}
 	t2 := time.Now()
-	log.Printf("Processed in %v", t2.Sub(t1))
+	log.Printf("Uploaded in %0.06f sec", t2.Sub(t1).Seconds())
 }
 
 func writeReq(cfg *config.Config, outFile string) {
