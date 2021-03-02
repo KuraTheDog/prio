@@ -169,7 +169,7 @@ func (l *Leader) beginEvaluation(upload *UploadArgs) {
 
 }
 
-func (l *Leader, prev_sum int) printTotalProcessedDelta() func() {
+func (l *Leader) printTotalProcessedDelta(prev_sum int) func() {
 
 	return func() {
 		// The sum might be a little bit off because of races
@@ -313,5 +313,5 @@ func (l *Leader) Run() {
 
 	counter := 0
 	// utils.RunForever(l.printTotalProcessed, 1*time.Second)
-	utils.RunForever(printTotalProcessedDelta(l, counter), 1*time.Second)
+	utils.RunForever(l.printTotalProcessedDelta(counter), 1*time.Second)
 }
