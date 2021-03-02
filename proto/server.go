@@ -6,8 +6,8 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/henrycg/prio/config"
-	"github.com/henrycg/prio/mpc"
+	"github.com/KuraTheDog/prio/config"
+	"github.com/KuraTheDog/prio/mpc"
 )
 
 func NewServer(cfg *config.Config, idx int) *Server {

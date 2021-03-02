@@ -4,8 +4,8 @@ import (
 	"log"
 	"math/big"
 
-	"github.com/henrycg/prio/circuit"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/circuit"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 func bigToBits(nBits int, value *big.Int) []*big.Int {

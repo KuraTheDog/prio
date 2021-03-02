@@ -4,11 +4,11 @@ import (
 	//	"log"
 	"math/big"
 
-	"github.com/henrycg/prio/circuit"
-	"github.com/henrycg/prio/config"
-	"github.com/henrycg/prio/poly"
-	"github.com/henrycg/prio/share"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/circuit"
+	"github.com/KuraTheDog/prio/config"
+	"github.com/KuraTheDog/prio/poly"
+	"github.com/KuraTheDog/prio/share"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 type CorShare struct {

@@ -5,7 +5,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 func evalSlow(mod *big.Int, coeffs []*big.Int, x *big.Int) *big.Int {

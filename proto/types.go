@@ -5,9 +5,9 @@ import (
 	"net/rpc"
 	"sync"
 
-	"github.com/henrycg/prio/config"
-	"github.com/henrycg/prio/mpc"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/config"
+	"github.com/KuraTheDog/prio/mpc"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 type Uuid [32]byte

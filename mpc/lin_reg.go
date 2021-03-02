@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/henrycg/prio/circuit"
-	"github.com/henrycg/prio/config"
-	"github.com/henrycg/prio/share"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/circuit"
+	"github.com/KuraTheDog/prio/config"
+	"github.com/KuraTheDog/prio/share"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 func linReg_Circuit(field *config.Field) *circuit.Circuit {

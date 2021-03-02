@@ -11,9 +11,9 @@ import (
 )
 
 import (
-	"github.com/henrycg/prio/config"
-	"github.com/henrycg/prio/proto"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/config"
+	"github.com/KuraTheDog/prio/proto"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 func main() {

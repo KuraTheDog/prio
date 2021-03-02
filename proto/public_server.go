@@ -3,7 +3,7 @@ package proto
 import (
 	"log"
 
-	"github.com/henrycg/prio/config"
+	"github.com/KuraTheDog/prio/config"
 )
 
 func HashToServer(cfg *config.Config, uuid Uuid) int {

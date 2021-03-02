@@ -8,8 +8,8 @@ import (
 
 	"golang.org/x/crypto/nacl/box"
 
-	"github.com/henrycg/prio/mpc"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/mpc"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 func encryptRequest(myPublicKey, myPrivateKey *[32]byte,

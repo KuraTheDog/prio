@@ -1,8 +1,8 @@
 package proto
 
 import (
-	"github.com/henrycg/prio/config"
-	"github.com/henrycg/prio/mpc"
+	"github.com/KuraTheDog/prio/config"
+	"github.com/KuraTheDog/prio/mpc"
 )
 
 // A pool of checker objects. We maintain this pool ourself

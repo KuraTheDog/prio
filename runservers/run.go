@@ -12,7 +12,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/henrycg/prio/config"
+	"github.com/KuraTheDog/prio/config"
 )
 
 func runServer(idx int, profile bool, memProfile bool, blockProfile bool, cfgFile string, debugNet bool, nothing bool) *exec.Cmd {

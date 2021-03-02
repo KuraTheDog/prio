@@ -3,7 +3,7 @@ package share
 import (
 	"math/big"
 
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 // Compressed representation of secret-shared data.

@@ -1,7 +1,7 @@
 package triple
 
 import (
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/utils"
 	"math/big"
 )
 

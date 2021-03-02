@@ -1,7 +1,7 @@
 package poly
 
 import (
-	"github.com/henrycg/prio/share"
+	"github.com/KuraTheDog/prio/share"
 	"math/big"
 )
 

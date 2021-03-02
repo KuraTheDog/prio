@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/henrycg/prio/share"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/share"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 // Supported gate types.

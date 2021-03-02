@@ -9,7 +9,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 var CacheFileRoot string = "prio-roots-cache"
