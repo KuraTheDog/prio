@@ -311,7 +311,7 @@ func (l *Leader) Run() {
 	// go l.statCounter.PrintEvery(30 * time.Second)
 	// go l.statCounter.PrintEvery(60 * time.Second)
 
-	prev_sum := uint(0)
+	prev_sum := uint(1)
 	// utils.RunForever(l.printTotalProcessed, 1*time.Second)
 	utils.RunForever(l.printTotalProcessedDelta(prev_sum), 1*time.Second)
 }
