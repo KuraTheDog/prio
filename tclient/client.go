@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/rpc"
 	"os"
+	"time"
 
 	"github.com/KuraTheDog/prio/config"
 	"github.com/KuraTheDog/prio/mpc"
@@ -138,7 +139,7 @@ func runDummyClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 }
 
 func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
-	t0 := utils.GetUtime()
+	t0 := time.Now()
 
 	args := makeArgs(cfg, nReqs, req)
 
@@ -157,9 +158,9 @@ func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 		<-c
 	}
 
-	t1 := utils.GetUtime()
+	t1 := time.Now()
 	log.Print("Done generating args")
-	log.Printf("Generated in %0.06f sec", float64((t1-t0))/1000000000.0)
+	log.Printf("Generated in %v", t1.Sub(t0))
 
 
 	for i := 0; i < nReqs; i++ {
@@ -175,8 +176,8 @@ func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 			log.Print("Processed request ", i)
 		}
 	}
-	t2 := utils.GetUtime()
-	log.Printf("Uploaded in %0.06f sec", float64((t2-t1))/1000000000.0)
+	t2 := time.Now()
+	log.Printf("Processed in %v", t2.Sub(t1))
 }
 
 func writeReq(cfg *config.Config, outFile string) {
