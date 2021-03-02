@@ -176,7 +176,7 @@ func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 		}
 	}
 	t2 := utils.GetUtime()
-	log.Printf("Uploaded in %0.06f sec", float64((t1-t0))/1000000000.0)
+	log.Printf("Uploaded in %0.06f sec", float64((t2-t1))/1000000000.0)
 }
 
 func writeReq(cfg *config.Config, outFile string) {
