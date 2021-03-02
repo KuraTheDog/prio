@@ -307,9 +307,9 @@ func (l *Leader) Run() {
 	}
 	go utils.RunForever(l.aggregate, 180*time.Second)
 	go utils.RunForever(l.changePoint, 180*time.Second)
-	go l.statCounter.PrintEvery(5 * time.Second)
-	go l.statCounter.PrintEvery(30 * time.Second)
-	go l.statCounter.PrintEvery(60 * time.Second)
+	// go l.statCounter.PrintEvery(5 * time.Second)
+	// go l.statCounter.PrintEvery(30 * time.Second)
+	// go l.statCounter.PrintEvery(60 * time.Second)
 
 	prev_sum := uint(0)
 	// utils.RunForever(l.printTotalProcessed, 1*time.Second)
