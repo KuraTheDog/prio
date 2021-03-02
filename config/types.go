@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/henrycg/prio/circuit"
+	"github.com/KuraTheDog/prio/circuit"
 )
 
 type FieldType byte

@@ -4,8 +4,8 @@ import (
 	"log"
 	"math/big"
 
-	"github.com/henrycg/prio/circuit"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/circuit"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 func intUnsafe_Circuit(name string) *circuit.Circuit {

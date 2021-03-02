@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/henrycg/prio/config"
+	"github.com/KuraTheDog/prio/config"
 )
 
 const LOCAL_GOBIN = "/home/YOUR_USERNAME_HERE/go/bin"

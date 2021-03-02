@@ -5,7 +5,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 func xPoints(n int) []*big.Int {

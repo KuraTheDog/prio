@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/henrycg/prio/share"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/share"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 func TestAddMul(t *testing.T) {

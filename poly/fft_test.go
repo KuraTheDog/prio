@@ -6,8 +6,8 @@ import (
 	"testing"
 	//	"time"
 
-	"github.com/henrycg/prio/share"
-	//	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/share"
+	//	"github.com/KuraTheDog/prio/utils"
 )
 
 func TestFFTOne(t *testing.T) {

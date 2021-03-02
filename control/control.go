@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"path"
 
-	"github.com/henrycg/prio/config"
+	"github.com/KuraTheDog/prio/config"
 )
 
 type commandFunc func(serverIdx int) string

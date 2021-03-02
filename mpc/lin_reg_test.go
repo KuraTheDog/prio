@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/henrycg/prio/config"
+	"github.com/KuraTheDog/prio/config"
 )
 
 func getField() *config.Field {

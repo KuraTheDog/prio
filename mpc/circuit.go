@@ -1,8 +1,8 @@
 package mpc
 
 import (
-	"github.com/henrycg/prio/circuit"
-	"github.com/henrycg/prio/config"
+	"github.com/KuraTheDog/prio/circuit"
+	"github.com/KuraTheDog/prio/config"
 )
 
 // Produce the arithmetic circuit for checking the validity of

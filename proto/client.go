@@ -6,8 +6,8 @@ import (
 
 	"golang.org/x/crypto/nacl/box"
 
-	"github.com/henrycg/prio/config"
-	"github.com/henrycg/prio/mpc"
+	"github.com/KuraTheDog/prio/config"
+	"github.com/KuraTheDog/prio/mpc"
 )
 
 // Generate a request that targets a particular leader node.

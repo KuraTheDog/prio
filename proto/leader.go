@@ -6,9 +6,9 @@ import (
 	"net/rpc"
 	"time"
 
-	"github.com/henrycg/prio/mpc"
-	"github.com/henrycg/prio/share"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/mpc"
+	"github.com/KuraTheDog/prio/share"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 /*************************

@@ -9,10 +9,10 @@ import (
 	"net/rpc"
 	"os"
 
-	"github.com/henrycg/prio/config"
-	"github.com/henrycg/prio/mpc"
-	"github.com/henrycg/prio/proto"
-	"github.com/henrycg/prio/utils"
+	"github.com/KuraTheDog/prio/config"
+	"github.com/KuraTheDog/prio/mpc"
+	"github.com/KuraTheDog/prio/proto"
+	"github.com/KuraTheDog/prio/utils"
 )
 
 func tryUpload(client *rpc.Client, args *proto.UploadArgs) error {
