@@ -138,9 +138,9 @@ func runDummyClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 }
 
 func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
-	args := makeArgs(cfg, nReqs, req)
-
 	t0 := utils.GetUtime()
+
+	args := makeArgs(cfg, nReqs, req)
 
 	c := make(chan int, nReqs)
 	n := cfg.NumServers()
