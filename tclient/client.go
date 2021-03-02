@@ -99,7 +99,7 @@ func makeDummyArgs(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) []
 	}
 
 	for i := 0; i < nReqs; i++ {
-		if i%10 == 0 {
+		if i%1000 == 0 {
 			log.Printf("Build request %v", i)
 		}
 		<-c
@@ -131,7 +131,7 @@ func runDummyClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 
 	for i := 0; i < nReqs; i++ {
 		<-c
-		if i%100 == 0 {
+		if i%1000 == 0 {
 			log.Print("Processed request ", i)
 		}
 	}
@@ -139,6 +139,8 @@ func runDummyClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 
 func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 	args := makeArgs(cfg, nReqs, req)
+
+	t0 := utils.GetUtime()
 
 	c := make(chan int, nReqs)
 	n := cfg.NumServers()
@@ -155,7 +157,10 @@ func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 		<-c
 	}
 
+	t1 := utils.GetUtime()
 	log.Print("Done generating args")
+	log.Printf("Generated in %0.06f sec", float64((t1-t0))/1000000000.0)
+
 
 	for i := 0; i < nReqs; i++ {
 		go func(argsIn *proto.UploadArgs) {
@@ -166,10 +171,12 @@ func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 
 	for i := 0; i < nReqs; i++ {
 		<-c
-		if i%100 == 0 {
+		if i%1000 == 0 {
 			log.Print("Processed request ", i)
 		}
 	}
+	t2 := utils.GetUtime()
+	log.Printf("Uploaded in %0.06f sec", float64((t1-t0))/1000000000.0)
 }
 
 func writeReq(cfg *config.Config, outFile string) {

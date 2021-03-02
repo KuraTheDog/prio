@@ -169,6 +169,23 @@ func (l *Leader) beginEvaluation(upload *UploadArgs) {
 
 }
 
+func (l *Leader, prev_sum int) printTotalProcessedDelta() func() {
+
+	return func() {
+		// The sum might be a little bit off because of races
+		sum := uint(0)
+		for i := 0; i < l.server.cfg.NumServers(); i++ {
+			sum += l.server.nProcessed[i]
+		}
+		l.statCounter.Update(sum)
+
+		if sum > prev_sum {
+			prev_sum = sum
+			log.Printf("Completed: %v", sum)
+		}
+	}
+}
+
 func (l *Leader) printTotalProcessed() {
 
 	// The sum might be a little bit off because of races
@@ -293,5 +310,8 @@ func (l *Leader) Run() {
 	go l.statCounter.PrintEvery(5 * time.Second)
 	go l.statCounter.PrintEvery(30 * time.Second)
 	go l.statCounter.PrintEvery(60 * time.Second)
-	utils.RunForever(l.printTotalProcessed, 1*time.Second)
+
+	counter = 0
+	// utils.RunForever(l.printTotalProcessed, 1*time.Second)
+	utils.RunForever(l.printTotalProcessedDelta(counter), 1*time.Second)
 }
