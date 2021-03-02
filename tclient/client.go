@@ -69,7 +69,7 @@ func makeArgs(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) []*prot
 	}
 
 	for i := 0; i < nReqs; i++ {
-		if i%10 == 0 {
+		if i%1000 == 0 {
 			log.Printf("Build request %v", i)
 		}
 		<-c
@@ -282,7 +282,7 @@ func main() {
 		tStart := utils.GetUtime()
 		requestOnce(cfg)
 		tFinish := utils.GetUtime()
-		log.Printf("Finished in %0.06f sec", float64((tFinish-tStart))/1000000000.0)
+		log.Printf("Finished Once in %0.06f sec", float64((tFinish-tStart))/1000000000.0)
 		return
 	}
 
@@ -292,7 +292,7 @@ func main() {
 			requestOnce(cfg)
 		}
 		tFinish := utils.GetUtime()
-		log.Printf("Finished in %0.06f sec", float64((tFinish-tStart))/1000000000.0/1000.0)
+		log.Printf("Finished Onek in %0.06f sec", float64((tFinish-tStart))/1000000000.0/1000.0)
 		return
 	}
 

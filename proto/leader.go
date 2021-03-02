@@ -293,5 +293,5 @@ func (l *Leader) Run() {
 	go l.statCounter.PrintEvery(5 * time.Second)
 	go l.statCounter.PrintEvery(30 * time.Second)
 	go l.statCounter.PrintEvery(60 * time.Second)
-	utils.RunForever(l.printTotalProcessed, 3*time.Second)
+	utils.RunForever(l.printTotalProcessed, 1*time.Second)
 }
