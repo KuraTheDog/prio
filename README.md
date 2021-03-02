@@ -16,7 +16,7 @@ For more information, please visit:
   [https://crypto.stanford.edu/prio/](https://crypto.stanford.edu/prio/).
 
 Dependencies (for fast polynomial operations):
-* [FLINT](http://www.flintlib.org/) 2.5.2
+* [FLINT](http://www.flintlib.org/) 2.5.2 ( 2.7 doesn't work :( )
 * [GMP](https://gmplib.org/) 6.1.1
 * [MPFR](http://www.mpfr.org/) 3.1.4
 
@@ -54,9 +54,9 @@ and add the following to your .bashrc (or equivalent):
 
 Download and install the Prio source:
 
-    go get github.com/henrycg/prio/tclient
-    go get github.com/henrycg/prio/tserver
-    go get github.com/henrycg/prio/runservers
+    go get github.com/KuraTheDog/prio/tclient
+    go get github.com/KuraTheDog/prio/tserver
+    go get github.com/KuraTheDog/prio/runservers
 
 If everything works, you should now have binaries
 tclient, tserver, and runservers in $GOPATH/bin.
