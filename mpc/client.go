@@ -28,7 +28,9 @@ func sharePolynomials(ckt *circuit.Circuit, prg *share.GenPRG) {
 	// Little n the number of points on the polynomials.
 	// The constant term is randomized, so it's (mulGates + 1).
 	n := len(mulGates) + 1
-	log.Printf("Mulgates: %v", n)
+	if(false) {
+		log.Printf("Mulgates: %v", n)
+	}
 
 	// Big N is n rounded up to a power of two
 	N := utils.NextPowerOfTwo(n)
