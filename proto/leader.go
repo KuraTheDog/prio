@@ -179,7 +179,7 @@ func (l *Leader) printTotalProcessedDelta(prev_sum uint) func() {
 		}
 		l.statCounter.Update(sum)
 
-		if sum == 0 || sum > prev_sum {
+		if sum > prev_sum {
 			prev_sum = sum
 			log.Printf("Completed: %v", sum)
 		}
