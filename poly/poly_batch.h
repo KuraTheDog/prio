@@ -28,16 +28,15 @@ struct precomp_s {
 typedef struct tree_s tree_t;
 typedef struct precomp_s precomp_t;
 
-void poly_batch_precomp_init(struct precomp_s* const pre, const fmpz_t modIn, const int n_points, const fmpz_t* const pointsXin);
+void poly_batch_precomp_init(struct precomp_s* const pre, char* modIn, const int n_points, char** pointsXin);
 void poly_batch_precomp_clear(struct precomp_s* const pre);
 
-/*
 void poly_batch_init(fmpz_mod_poly_t poly, const struct precomp_s* const pre);
-void poly_batch_clear(fmpz_mod_poly_t poly);
+void poly_batch_clear(fmpz_mod_poly_t poly, const struct precomp_s* const pre);
 
-void poly_batch_interpolate(fmpz_mod_poly_t poly, const fmpz_t mod, const struct precomp_s* const pre, const fmpz_t* const pointsYin);
+void poly_batch_interpolate(fmpz_mod_poly_t poly, const struct precomp_s* const pre, char** pointsYin);
 
-void poly_batch_evaluate_once(const fmpz_mod_poly_t poly, const fmpz_t xIn, fmpz_t out);
-fmpz_t *poly_batch_evaluate(fmpz_mod_poly_t poly, const fmpz_t mod, const int n_points, const fmpz_t* const pointsXin);
-*/
+char* poly_batch_evaluate_once(const fmpz_mod_poly_t poly, char* modulus, char* xIn);
+char* poly_batch_evaluate(fmpz_mod_poly_t poly, char* modulus, const int n_points, char** pointsXin);
+
 #endif

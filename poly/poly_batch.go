@@ -31,8 +31,8 @@ func destroyBatchPre(pre *BatchPre) {
 	C.poly_batch_precomp_clear(&pre.pre)
 }
 
-func destroyBatchPoly(poly *BatchPoly) {
-	C.poly_batch_clear(&poly.fpoly[0])
+func destroyBatchPoly(poly *BatchPoly, pre* BatchPre) {
+	C.poly_batch_clear(&poly.fpoly[0], &pre.pre)
 }
 
 // Precompute values for interpolating/evaluating a polynomial
@@ -79,13 +79,13 @@ func (pre *BatchPre) Interp(yPointsIn []*big.Int) *BatchPoly {
 }
 
 // Evaluate the polynomial at a specified point x.
-func (poly *BatchPoly) EvalOnce(x *big.Int) *big.Int {
-	return cToBig(C.poly_batch_evaluate_once(&poly.fpoly[0], bigToC(x)))
+func (poly *BatchPoly) EvalOnce(x *big.Int, mod *big.Int) *big.Int {
+	return cToBig(C.poly_batch_evaluate_once(&poly.fpoly[0], bigToC(mod), bigToC(x)))
 }
 
 // Evaluate the polynomial many times using faster a multi-point evaluation
 // algorithm.
-func (poly *BatchPoly) Eval(xPointsIn []*big.Int) []*big.Int {
+func (poly *BatchPoly) Eval(xPointsIn []*big.Int, mod *big.Int) []*big.Int {
 	n := len(xPointsIn)
 
 	xPoints := make([]*C.char, n)
@@ -93,6 +93,6 @@ func (poly *BatchPoly) Eval(xPointsIn []*big.Int) []*big.Int {
 		xPoints[i] = bigToC(xPointsIn[i])
 	}
 
-	cstr := C.poly_batch_evaluate(&poly.fpoly[0], C.int(n), &xPoints[0])
+	cstr := C.poly_batch_evaluate(&poly.fpoly[0], bigToC(mod), C.int(n), &xPoints[0])
 	return cToBigArray(n, cstr)
 }
