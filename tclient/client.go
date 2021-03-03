@@ -70,7 +70,7 @@ func makeArgs(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) []*prot
 	}
 
 	for i := 0; i < nReqs; i++ {
-		if i%1000 == 0 {
+		if i%(nReqs/10) == 0 {
 			log.Printf("Build request %v", i)
 		}
 		<-c
@@ -100,7 +100,7 @@ func makeDummyArgs(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) []
 	}
 
 	for i := 0; i < nReqs; i++ {
-		if i%1000 == 0 {
+		if i%(nReqs/10) == 0 {
 			log.Printf("Build request %v", i)
 		}
 		<-c
@@ -132,7 +132,7 @@ func runDummyClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 
 	for i := 0; i < nReqs; i++ {
 		<-c
-		if i%1000 == 0 {
+		if i%(nReqs/10) == 0 {
 			log.Print("Processed request ", i)
 		}
 	}
@@ -172,7 +172,7 @@ func runClient(cfg *config.Config, nReqs int, req [][]*mpc.ClientRequest) {
 
 	for i := 0; i < nReqs; i++ {
 		<-c
-		if i%1000 == 0 {
+		if i%(nReqs/10) == 0 {
 			log.Print("Processed request ", i)
 		}
 	}
