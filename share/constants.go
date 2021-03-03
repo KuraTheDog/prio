@@ -157,8 +157,8 @@ func init() {
 	//IntGen = fromString("22855fdf11374225")
 
 	// This is a 48-bit modulus  --  2^19 | p-1
-	IntModulus = fromString("8000000000000000080001")
-	IntGen = fromString("2597c14f48d5b65ed8dcca")
+	IntModulus = fromString("800006880001")
+	IntGen = fromString("3503101C8855")
 
 	// This is a BOGUS 16-bit modulus
 	//IntModulus = fromString("ffff")
